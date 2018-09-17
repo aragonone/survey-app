@@ -1,10 +1,10 @@
-pragma solidity 0.4.18;
+pragma solidity 0.4.24;
 
-import "@aragon/os/contracts/lib/minime/MiniMeToken.sol";
+import "@aragon/apps-shared-minime/contracts/MiniMeToken.sol";
 
 
 contract BadToken is MiniMeToken {
-    function BadToken(
+    constructor(
         MiniMeTokenFactory _tokenFactory,
         MiniMeToken _parentToken,
         uint _parentSnapShotBlock,
@@ -19,7 +19,8 @@ contract BadToken is MiniMeToken {
 
     }
 
-    function totalSupplyAt(uint _blockNumber) public constant returns(uint) {
+    // should be changed to view when MiniMe is updated
+    function totalSupplyAt(uint) public constant returns(uint) {
         return 1;
     }
 }
