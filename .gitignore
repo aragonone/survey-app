@@ -14,9 +14,8 @@ artifacts/
 # yarn
 yarn-error.log
 
-# Ignore lock files
+# Ignore package-lock files
 package-lock.json
-yarn.lock
 
 # Misc
 .DS_Store
